@@ -27,20 +27,23 @@ function App() {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (!selectedBook.title || !selectedBook.author || !selectedBook.isbn || !selectedBook.price || !selectedBook.publicationDate) {
-      alert('Моля, попълнете всички полета.');
-      return;
+      alert('Моля, попълнете всички полета.'); return;
     }
-    const newId = books.length + 1;
-    const newBook = { ...selectedBook, id: newId };
-    setBooks([...books, newBook]);
-    setSelectedBook({
-      id: '',
-      title: '',
-      author: '',
-      isbn: '',
-      price: '',
-      publicationDate: ''
-    });
+
+    const existingBookIndex = books.findIndex(book => book.id === selectedBook.id);
+    if (existingBookIndex !== -1) {
+
+      const updatedBooks = [...books];
+      updatedBooks[existingBookIndex] = { ...selectedBook };
+      setBooks(updatedBooks);
+
+    } else {
+
+      const newId = books.length + 1;
+      const newBook = { ...selectedBook, id: newId };
+      setBooks([...books, newBook]);
+
+    }
   };
 
   const handleBookSelect = (book) => {
