@@ -4,10 +4,8 @@ import './App.css';
 const initialBooks = [
   { id: 1, title: 'The Name of the Wind', author: 'Patrick Rothfuss', isbn: '978-0-7564-0473-4', price: '$10.99', publicationDate: '2007-03-27' },
   { id: 2, title: 'The Wise Man\'s Fear', author: 'Patrick Rothfuss', isbn: '978-0-7564-0474-1', price: '$11.99', publicationDate: '2011-03-01' },
-  // Добавяне на книги на Маркъс Зюсак
   { id: 3, title: 'The Book Thief', author: 'Markus Zusak', isbn: '978-0-375-84220-7', price: '$12.99', publicationDate: '2005-03-14' },
   { id: 4, title: 'Bridge of Clay', author: 'Markus Zusak', isbn: '978-0-375-84512-3', price: '$11.99', publicationDate: '2018-10-09' },
-  // Добавете още книги тук
 ];
 
 function App() {
@@ -77,7 +75,7 @@ function App() {
 
 return (
     <div className="App">
-      <nav>Navbar</nav>
+      <nav>LibrarySystem</nav>
       <div className="content-list">
         <h2>List Section</h2>
         <ul>
@@ -109,7 +107,7 @@ return (
         </form>
       </div>
       <footer className="footer">
-        <p>This is the footer</p>
+        <p>Thank you using this site!</p>
       </footer>
     </div>
   );
